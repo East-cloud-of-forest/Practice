@@ -11,12 +11,6 @@ class App {
     window.addEventListener('resize', this.resize.bind(this), false)
     this.resize()
 
-    const totalStar = 500
-    this.star = []
-    for (let i = 0; i < totalStar; ++i) {
-      this.star[i] = new Star(this.stageWidth, this.stageHeight)
-    }
-
     window.requestAnimationFrame(this.animate.bind(this))
   }
 
@@ -27,6 +21,12 @@ class App {
     this.canvas.width = this.stageWidth * this.pixelRatio
     this.canvas.height = this.stageHeight * this.pixelRatio
     this.ctx.scale(this.pixelRatio, this.pixelRatio)
+
+    const totalStar = 500
+    this.star = []
+    for (let i = 0; i < totalStar; ++i) {
+      this.star[i] = new Star(this.stageWidth, this.stageHeight)
+    }
   }
 
   animate() {
